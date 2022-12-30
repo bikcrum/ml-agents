@@ -9,7 +9,7 @@ using Unity.MLAgents.Sensors;
 public class PyramidAgent : Agent
 {
     public GameObject area;
-    PyramidArea m_MyArea;
+    // PyramidArea m_MyArea;
     Rigidbody m_AgentRb;
     PyramidSwitch m_SwitchLogic;
     public GameObject areaSwitch;
@@ -18,7 +18,7 @@ public class PyramidAgent : Agent
     public override void Initialize()
     {
         m_AgentRb = GetComponent<Rigidbody>();
-        m_MyArea = area.GetComponent<PyramidArea>();
+        // m_MyArea = area.GetComponent<PyramidArea>();
         m_SwitchLogic = areaSwitch.GetComponent<PyramidSwitch>();
     }
 
@@ -26,7 +26,7 @@ public class PyramidAgent : Agent
     {
         if (useVectorObs)
         {
-            sensor.AddObservation(m_SwitchLogic.GetState());
+            // sensor.AddObservation(m_SwitchLogic.GetState());
             sensor.AddObservation(transform.InverseTransformDirection(m_AgentRb.velocity));
         }
     }
@@ -89,24 +89,24 @@ public class PyramidAgent : Agent
         var enumerable = Enumerable.Range(0, 9).OrderBy(x => Guid.NewGuid()).Take(9);
         var items = enumerable.ToArray();
 
-        m_MyArea.CleanPyramidArea();
+        // m_MyArea.CleanPyramidArea();
 
         m_AgentRb.velocity = Vector3.zero;
-        m_MyArea.PlaceObject(gameObject, items[0]);
+        // m_MyArea.PlaceObject(gameObject, items[0]);
         transform.rotation = Quaternion.Euler(new Vector3(0f, Random.Range(0, 360)));
 
         m_SwitchLogic.ResetSwitch(items[1], items[2]);
-        m_MyArea.CreateStonePyramid(1, items[3]);
-        m_MyArea.CreateStonePyramid(1, items[4]);
-        m_MyArea.CreateStonePyramid(1, items[5]);
-        m_MyArea.CreateStonePyramid(1, items[6]);
-        m_MyArea.CreateStonePyramid(1, items[7]);
-        m_MyArea.CreateStonePyramid(1, items[8]);
+        // m_MyArea.CreateStonePyramid(1, items[3]);
+        // m_MyArea.CreateStonePyramid(1, items[4]);
+        // m_MyArea.CreateStonePyramid(1, items[5]);
+        // m_MyArea.CreateStonePyramid(1, items[6]);
+        // m_MyArea.CreateStonePyramid(1, items[7]);
+        // m_MyArea.CreateStonePyramid(1, items[8]);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("goal"))
+        if (collision.gameObject.CompareTag("switchOff"))
         {
             SetReward(2f);
             EndEpisode();
