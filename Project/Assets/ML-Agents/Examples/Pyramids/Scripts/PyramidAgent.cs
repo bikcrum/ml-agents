@@ -12,9 +12,12 @@ public class PyramidAgent : Agent {
 
     // PyramidArea m_MyArea;
     Rigidbody m_AgentRb;
-    PyramidSwitch m_SwitchLogic;
-    public GameObject areaSwitch;
+
+    // PyramidSwitch m_SwitchLogic;
+    // public GameObject areaSwitch;
     public bool useVectorObs;
+
+    [SerializeField] private Transform goal;
 
     [SerializeField] private List<Transform> obstaclesTransform;
 
@@ -23,7 +26,7 @@ public class PyramidAgent : Agent {
     public override void Initialize() {
         m_AgentRb = GetComponent<Rigidbody>();
         // m_MyArea = area.GetComponent<PyramidArea>();
-        m_SwitchLogic = areaSwitch.GetComponent<PyramidSwitch>();
+        // m_SwitchLogic = areaSwitch.GetComponent<PyramidSwitch>();
     }
 
     public override void CollectObservations(VectorSensor sensor) {
@@ -79,8 +82,8 @@ public class PyramidAgent : Agent {
     }
 
     public override void OnEpisodeBegin() {
-        var enumerable = Enumerable.Range(0, 9).OrderBy(x => Guid.NewGuid()).Take(9);
-        var items = enumerable.ToArray();
+        // var enumerable = Enumerable.Range(0, 9).OrderBy(x => Guid.NewGuid()).Take(9);
+        // var items = enumerable.ToArray();
 
         // m_MyArea.CleanPyramidArea();
 
@@ -88,7 +91,10 @@ public class PyramidAgent : Agent {
         // m_MyArea.PlaceObject(gameObject, items[0]);
         transform.rotation = Quaternion.Euler(new Vector3(0f, Random.Range(0, 360)));
 
-        m_SwitchLogic.ResetSwitch(items[1], items[2]);
+        // m_SwitchLogic.ResetSwitch(items[1], items[2]);
+
+        goal.localPosition = new Vector3(Random.Range(-45f, 45f), 1f, Random.Range(-45f, 45f));
+        goal.Rotate(0f, Random.Range(0f, 180f), 0f);
 
         if (randomizeObstacleRotation) {
             foreach (var obstacleTransform in obstaclesTransform) {
@@ -110,7 +116,12 @@ public class PyramidAgent : Agent {
         }
         else if (collision.gameObject.CompareTag("Obstacle")) {
             SetReward(-1f);
-            transform.position = new Vector3(Random.Range(-45f, 45f), 0f, Random.Range(-45f, 45f));
+            transform.localPosition = new Vector3(Random.Range(-45f, 45f), 0f, Random.Range(-45f, 45f));
+            EndEpisode();
+        }
+        else if (collision.gameObject.CompareTag("wall")) {
+            SetReward(-1f);
+            transform.localPosition = new Vector3(Random.Range(-45f, 45f), 0f, Random.Range(-45f, 45f));
             EndEpisode();
         }
     }

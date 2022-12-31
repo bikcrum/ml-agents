@@ -1,0 +1,29 @@
+{
+    "Pyramids": {
+        "checkpoints": [
+            {
+                "steps": 5356,
+                "file_path": "results/PyramidSat Dec 31 01:16:10 PST 2022/Pyramids/Pyramids-5356.onnx",
+                "reward": -1.25000002682209,
+                "creation_time": 1672478234.333984,
+                "auxillary_file_paths": [
+                    "results/PyramidSat Dec 31 01:16:10 PST 2022/Pyramids/Pyramids-5356.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5356,
+            "file_path": "results/PyramidSat Dec 31 01:16:10 PST 2022/Pyramids.onnx",
+            "reward": -1.25000002682209,
+            "creation_time": 1672478234.333984,
+            "auxillary_file_paths": [
+                "results/PyramidSat Dec 31 01:16:10 PST 2022/Pyramids/Pyramids-5356.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.13.1"
+    }
+}
