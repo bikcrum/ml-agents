@@ -108,5 +108,10 @@ public class PyramidAgent : Agent {
             SetReward(2f);
             EndEpisode();
         }
+        else if (collision.gameObject.CompareTag("Obstacle")) {
+            SetReward(-1f);
+            transform.position = new Vector3(Random.Range(-45f, 45f), 0f, Random.Range(-45f, 45f));
+            EndEpisode();
+        }
     }
 }
