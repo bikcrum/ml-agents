@@ -684,9 +684,16 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 5000
-  area: {fileID: 1464170487903594}
   areaSwitch: {fileID: 1432086782037750}
   useVectorObs: 1
+  obstaclesTransform:
+  - {fileID: 6965078417745819617}
+  - {fileID: 7468549324210244301}
+  - {fileID: 3039764134980028187}
+  - {fileID: 9141598170148966497}
+  - {fileID: 2241432510773803431}
+  - {fileID: 6349371422598641552}
+  randomizeObstacleRotation: 0
 --- !u!65 &65345930959735878
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -745,7 +752,7 @@ MonoBehaviour:
   m_Height: 84
   m_Grayscale: 0
   m_ObservationType: 0
-  m_RuntimeCameraEnable: 0
+  m_RuntimeCameraEnable: 1
   m_ObservationStacks: 1
   m_Compression: 1
 --- !u!1 &1148882946833254
@@ -3414,7 +3421,7 @@ GameObject:
   - component: {fileID: 7867535418200104261}
   - component: {fileID: 1845975894262685593}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: Obstacle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3511,7 +3518,7 @@ GameObject:
   - component: {fileID: 8055107711510969417}
   - component: {fileID: 4118541842275570916}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Obstacle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3608,7 +3615,7 @@ GameObject:
   - component: {fileID: 2392283100438371884}
   - component: {fileID: 464915118458359404}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Obstacle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3705,7 +3712,7 @@ GameObject:
   - component: {fileID: 4672990678012131831}
   - component: {fileID: 8681044054461907532}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Obstacle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3802,7 +3809,7 @@ GameObject:
   - component: {fileID: 161839645340306349}
   - component: {fileID: 3891683371656841792}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Obstacle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3899,7 +3906,7 @@ GameObject:
   - component: {fileID: 1704750773426062688}
   - component: {fileID: 9185897322176757480}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
