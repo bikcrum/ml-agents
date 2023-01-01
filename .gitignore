@@ -6,7 +6,7 @@
 # Output Builds
 /Builds
 # TF models
-/TFModels
+TFModels
 
 # Training environments
 /envs
