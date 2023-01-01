@@ -699,7 +699,7 @@ MonoBehaviour:
   - {fileID: 1582907663070337149}
   - {fileID: 785670830930610878}
   - {fileID: 9157738851817114580}
-  randomizeObstacleRotation: 1
+  randomizeObstacleRotation: 0
 --- !u!65 &65345930959735878
 BoxCollider:
   m_ObjectHideFlags: 0
