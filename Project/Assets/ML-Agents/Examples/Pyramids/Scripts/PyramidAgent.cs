@@ -110,7 +110,7 @@ public class PyramidAgent : Agent {
     }
 
     void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("switchOff")) {
+        if (collision.gameObject.CompareTag("goal")) {
             SetReward(2f);
             EndEpisode();
         }
