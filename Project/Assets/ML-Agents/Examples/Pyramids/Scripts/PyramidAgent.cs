@@ -77,13 +77,13 @@ public class PyramidAgent : Agent {
             int rotationIndex = (int)(transform.eulerAngles.y / 22.5f);
 
             if (visitedState.Contains((gridIndex, rotationIndex))) {
-                AddReward(-1f);
+                AddReward(-2f / MaxStep);
                 Debug.Log("Visiting same state");
             }
             else {
                 visitedState.Add((gridIndex, rotationIndex));
                 Debug.Log("Visiting new state");
-                AddReward(1f);
+                AddReward(2f / MaxStep);
             }
 
             prevTime = Time.time;
