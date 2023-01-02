@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -22,6 +23,10 @@ public class PyramidAgent : Agent {
     [SerializeField] private List<Transform> obstaclesTransform;
 
     [SerializeField] private bool randomizeObstacleRotation;
+
+    private HashSet<(int, int)> visitedState = new HashSet<(int, int)>();
+
+    private float prevTime;
 
     public override void Initialize() {
         m_AgentRb = GetComponent<Rigidbody>();
@@ -61,6 +66,29 @@ public class PyramidAgent : Agent {
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers) {
+        // Check every 0.5 second if agent is at same place, give reward of -1 else if it discovered new place give reward of 1
+        if (Time.time - prevTime > 0.5f) {
+            Vector3 position = transform.localPosition;
+            int gridX = (int)((position.x + 50) / 10f);
+            int gridZ = (int)((position.z + 50) / 10f);
+
+            int gridIndex = gridX * 10 + gridZ;
+
+            int rotationIndex = (int)(transform.eulerAngles.y / 22.5f);
+
+            if (visitedState.Contains((gridIndex, rotationIndex))) {
+                AddReward(-1f);
+                Debug.Log("Visiting same state");
+            }
+            else {
+                visitedState.Add((gridIndex, rotationIndex));
+                Debug.Log("Visiting new state");
+                AddReward(1f);
+            }
+
+            prevTime = Time.time;
+        }
+
         AddReward(-1f / MaxStep);
         MoveAgent(actionBuffers.DiscreteActions);
     }
