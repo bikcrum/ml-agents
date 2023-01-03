@@ -3633,7 +3633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2560888811749663578
 Transform:
   m_ObjectHideFlags: 0
@@ -3730,7 +3730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &785670830930610878
 Transform:
   m_ObjectHideFlags: 0
@@ -4021,7 +4021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6300551007911987327
 Transform:
   m_ObjectHideFlags: 0
@@ -4118,7 +4118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9157738851817114580
 Transform:
   m_ObjectHideFlags: 0
@@ -4215,7 +4215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1582907663070337149
 Transform:
   m_ObjectHideFlags: 0
@@ -4308,11 +4308,11 @@ GameObject:
   - component: {fileID: 9154119282580701752}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: goal
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5962717740396482435
 Transform:
   m_ObjectHideFlags: 0
@@ -4603,7 +4603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7484724709015551264
 Transform:
   m_ObjectHideFlags: 0
